@@ -35,13 +35,17 @@ pnumber TEXT);
 
 ```bash
 # Backend
-cd server
-docker build -t sscores/se3200-backend:latest .
-docker push sscores/se3200-backend:latest
-cd ..
+sudo docker build -f server/Dockerfile -t sscores/se3200-backendlatest .
+sudo docker push sscores/se3200-backend:latest
 
 # Frontend
-cd client
-docker build -t sscores/se3200-frontend:latest .
-docker push sscores/se3200-frontend:latest
-cd ..
+sudo docker build -f client/Dockerfile sscores/se3200-frontend:latest .
+sudo docker push sscores/se3200-frontend:latest
+
+### Kubernetes Deployment
+#To deploy everything
+kubectl apply -f k8s/
+
+##Accessing the Application
+# http://144.38.201.7/
+
