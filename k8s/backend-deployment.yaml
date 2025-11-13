@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: se3200-backend
+  labels:
+    app: se3200-app
+    tier: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: se3200-app
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: se3200-app
+        tier: backend
+    spec:
+      containers:
+        - name: backend
+          image: sscores/se3200-backend:latest
+          ports:
+            - containerPort: 5000

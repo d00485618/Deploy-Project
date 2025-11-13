@@ -27,3 +27,21 @@ pnumber TEXT);
 |  edit_member  |     PUT     | /members/<int:id> |
 | create_member |    POST     |     /members      |
 |     home      |     GET     |      /home        |
+
+
+## Docker / Kubernetes Deployment
+
+### Build and push Docker images
+
+```bash
+# Backend
+cd server
+docker build -t sscores/se3200-backend:latest .
+docker push sscores/se3200-backend:latest
+cd ..
+
+# Frontend
+cd client
+docker build -t sscores/se3200-frontend:latest .
+docker push sscores/se3200-frontend:latest
+cd ..
