@@ -53,6 +53,11 @@ def home():
     return "You Are Home"
 
 def main():
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True
+    )
 
-main()
+if __name__ == "__main__":
+    main()

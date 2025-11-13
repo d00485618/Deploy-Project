@@ -10,7 +10,7 @@ userform.style.display = "none"
 function load() {
     document.querySelectorAll(".member").forEach(el => el.remove())
 
-    fetch("http://127.0.0.1:5000/members")
+    fetch("/members")
         .then(response => response.json())
         .then(data => {
             console.log(data);
@@ -195,7 +195,7 @@ function load_members(member) {
 // DELETE method
 function do_delete(id) {
     console.log("Your are going to delete member: ", id)
-    fetch("http://127.0.0.1:5000/members/"+id, {
+    fetch("/members/"+id, {
         method: "DELETE",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded"
@@ -235,7 +235,7 @@ function do_edit(id) {
     data += "&email=" + encodeURIComponent(email)
     data += "&pnumber=" + encodeURIComponent(pnumber)
     
-    fetch("http://127.0.0.1:5000/members/"+id, {
+    fetch("/members/"+id, {
         method: "PUT",
         body: data,
         headers: {
@@ -274,7 +274,7 @@ function addMember() {
     data += "&pnumber=" + encodeURIComponent(pnumber)
     console.log(data)
 
-    fetch("http://127.0.0.1:5000/members", {
+    fetch("/members", {
         method: "POST",
         body: data,
         headers: {
