@@ -46,6 +46,7 @@ sudo docker push sscores/se3200-frontend:latest
 #To deploy everything
 kubectl apply -f k8s/
 
-##Accessing the Application
-# http://144.38.201.7/
+## Accessing the Application
+http://144.38.201.7/
+
 
